@@ -77,6 +77,8 @@ body {
 ----------------- Checkout headers -------------------- 
 --------------------------------------------------- */ 
 .checkout h1 {
+    font-family: var(--all-caps-font);
+    font-weight: var(--semi-bold);
 }
 
 
