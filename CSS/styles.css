@@ -1,0 +1,104 @@
+/* :root selects the root element of the document:
+   <html> in the case of HTML */
+
+/* in most cases if a variable is set inside the root like:
+color: blue;
+most elements in the html will inherit that feature
+same applies to font style, size and other things... */
+
+:root {
+    /* colours */
+    --category--grid-color: #fcd772;
+    --background-color: #FAF3E0;
+    --warm-ish-background-color: #EFDB99;
+    --warm-background-color: #DECA87;
+    --footer-color: #302606;
+    --footer-secondary-text-color: #D1D5DB;
+    --banner-color: #7D661C;
+    --action-button-color: black;
+    --main-text-color: black;
+    --secondary-text-color:#525252;
+
+    /* font */
+    /* if font property not specified then defaults to normal/medium */
+    /* if the user machine can't use roboto, then defaults to sans serif */
+    font: "Roboto", sans-serif; 
+    --all-caps-font: "Poppins", sans-serif;
+    /* font weights */
+    --medium: 500;
+    --semi-bold: 600;
+
+
+}
+
+/* General styling */
+body {
+    background-color: var(--background-color);
+}
+
+
+
+/* Button styling */
+.category-button {
+    background-color: var(--category--grid-color);
+    color: var(--text-color);
+}
+
+.action-button {
+    background-color: var(--accent-color);
+}
+
+
+
+/* --------------------------------------------------
+----------------- Banner styling -------------------- 
+--------------------------------------------------- */ 
+.banner {
+    background-color: var(--banner-color);
+    
+}
+
+/* styling for banner headers */
+.banner h2 {
+    font-size: 1.25rem;
+    color: #F4F3F2;
+    margin-bottom: 0.5rem;
+}
+
+/* styling for banner content */
+.banner p {
+    color: var(--footer-secondary-text-color);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+
+/* --------------------------------------------------
+----------------- Checkout headers -------------------- 
+--------------------------------------------------- */ 
+.checkout h1 {
+}
+
+
+/* --------------------------------------------------
+----------------- Footer styling -------------------- 
+--------------------------------------------------- */ 
+
+/* note this matches the footer HTML tag, not a class or ID named "footer" */
+footer {
+    background-color: var(--footer-color);
+}
+
+/* styling for footer headers */
+footer h2 {
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+/* styling for footer content */
+footer p {
+    color: var(--footer-secondary-text-color);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
