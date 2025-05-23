@@ -1,3 +1,8 @@
+/* import the roboto and poppins fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
 /* :root selects the root element of the document:
    <html> in the case of HTML */
 
@@ -22,18 +27,45 @@ same applies to font style, size and other things... */
     /* font */
     /* if font property not specified then defaults to normal/medium */
     /* if the user machine can't use roboto, then defaults to sans serif */
-    font: "Roboto", sans-serif; 
+    font-family: "Roboto", sans-serif; 
     --all-caps-font: "Poppins", sans-serif;
     /* font weights */
     --medium: 500;
     --semi-bold: 600;
 
 
+    /* borders */
+    --corner-radius: 16px; /* to be consistent with figma */
+
+
+
 }
+
+/* A common threshold for screen width is around 768px, which typically separates phones from tablets/desktops. */
+
 
 /* General styling */
 body {
     background-color: var(--background-color);
+}
+
+
+/* ---------- Overriding defaults -------------- */
+/* unordered list */
+ul {
+    padding-inline-start: 0; /* removes default left padding */
+}
+
+/* hrefs (links) */
+a {
+  color: inherit; /* makes it use the surrounding text color */
+  text-decoration: none; /* removes underline */
+}
+
+/* main frame */
+.main {
+    padding: 10px;
+    
 }
 
 
@@ -49,12 +81,20 @@ body {
 }
 
 
+.row{
+    display: flex;
+}
+
+/* nav bar */
+nav ul {
+    display: flex;
+}
+
+
 /* --------------------------------------------------
 ----------------- header styling -------------------- 
 --------------------------------------------------- */
-header .row{
-    display: flex;
-}
+
 
 
 
@@ -97,22 +137,46 @@ header .row{
 /* note this matches the footer HTML tag, not a class or ID named "footer" */
 footer {
     background-color: var(--footer-color);
+    padding: 26px 13px; /* top and bottom are 26px, left and right are 13px */
 }
 
-/* styling for footer headers */
-footer h2 {
-    font-size: 1.25rem;
+@media (min-width: 769px) {
+    .footer-grid {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 1rem, 3rem;
+    }
+}
+
+.footer-column {
+    /* flex: 1 1 200px;
+    margin: 10px; */
+}
+
+.footer-column h4 {
     color: white;
-    margin-bottom: 0.5rem;
+    font-weight: bold;
+    /* margin-bottom: 10px; */
 }
 
-/* styling for footer content */
-footer p {
+.footer-column ul {
     color: var(--footer-secondary-text-color);
-    font-size: 0.9rem;
-    line-height: 1.4;
+    list-style: none;
 }
 
-footer small {
-    color: #525252;
+.footer-column p {
+    color: var(--footer-secondary-text-color);
+    font-size: 0.8em;
+    line-height: 1.7;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    font-size: 0.8em;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: #9CA3AF;
+    font-size: 0.7em;
 }
