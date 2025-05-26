@@ -1,0 +1,151 @@
+/* --------------------------------------------------
+----------------- Banner  --------------------------- 
+--------------------------------------------------- */ 
+.banner {
+    background-color: var(--banner-color);
+    margin-inline: 1%;
+}
+
+.banner div {
+    padding: 0% 10% 5%;
+}
+/* styling for banner headers */
+.banner h2 {
+    font-size: 2.2rem;
+    color: #F4F3F2;
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+}
+
+/* styling for banner content */
+.banner p {
+    color: #D0CAC4;
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
+.banner button {
+    background-color: var(--background-color);
+    color: #171717;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border-width: 0.1rem;
+    padding: 2% 2%;
+}
+
+
+
+/* --------------------------------------------------
+----------------- category grid -------------------- 
+--------------------------------------------------- */ 
+.category-grid {
+    display: grid;
+    /* minmax specifies the min and max sizes that the column can be when resizing the page */
+    /* three 300px‐wide columns */ 
+    /* grid-template-columns: repeat(3, 300px);  */
+    /* two 160px‐tall rows */ 
+    /* grid-template-rows: repeat(2, 160px);  */
+
+    /* 3 equal columns that share the available space */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    
+    /* fixed row‐height is fine, or use auto */
+    grid-auto-rows: 160px;
+
+
+    gap: 16px; /* space between cards */ 
+    justify-content: center; /* center the grid in its container */
+
+    
+}
+
+.category-grid .card {
+    display: flex;
+    flex-direction: column;
+    /*  centers the different elements with the flex direction (vertically) inside the flexbox */
+    justify-content: center; 
+    /* the elements will be placed in the horizontal center of the flexbox */
+    align-items: center;
+    background-color: var(--category--grid-button-color);
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: none; /* override default black border */
+}
+
+.card:hover,
+.card:focus {
+    transform: scale(1.03);
+}
+
+/* icon */
+.card img {
+    height: 50px;
+    margin-bottom: 0.5rem;
+}
+
+/* label */
+.card span {
+    font-size: 1.8rem;
+}
+
+/* moving just the guitar image a bit to the right
+ (because the image weight of the guitar leans to the left) */
+.category-grid a[href="product_list.html"] img {
+  margin-left: 8px;
+}
+
+@media(max-width: 769px) {
+      .grid {
+        grid-template-columns: 1fr; /* single flexible column */ 
+        grid-auto-rows: 160px; /* preserve card height */ 
+      }
+      .card {
+        max-width: 300px; /* keep cards from stretching too wide */ 
+        margin: 0 auto; /* center cards in the column */ 
+      }
+    }
+
+
+/* --------------------------------------------------
+----------------- Carousel ------------------------ 
+--------------------------------------------------- */ 
+.carousel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding-inline: 2%;
+}
+
+@media (max-width: 769px) {
+  .carousel {
+    grid-template-columns: 1fr; /* one‐col on narrow screens */
+  }
+}
+
+.carousel .card {
+  display: flex;             
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: 1px solid #E5E7EB;
+}
+
+.carousel .card:hover,
+.carousel .card:focus {
+  transform: scale(1.03);
+}
+
+.carousel .card img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel .card span,
+.carousel .card p {
+  font-size: 1.4rem;
+}
+.carousel .card p {
+  color: var(--secondary-text-color);
+  margin-top: auto;  /* push it to the bottom */
+  padding-block: 10%;
+}
