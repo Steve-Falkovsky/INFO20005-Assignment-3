@@ -179,6 +179,54 @@ nav a {
   }
 }
 
+
+/* --------------------------------------------------
+----------------- Carousel ------------------------ 
+--------------------------------------------------- */ 
+.carousel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding-inline: 2%;
+}
+
+@media (max-width: 769px) {
+  .carousel {
+    grid-template-columns: 1fr; /* one‐col on narrow screens */
+  }
+}
+
+.carousel .card {
+  display: flex;             
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: 1px solid #E5E7EB;
+}
+
+.carousel .card:hover,
+.carousel .card:focus {
+  transform: scale(1.03);
+}
+
+.carousel .card img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel .card span,
+.carousel .card p {
+  font-size: 1.4rem;
+}
+.carousel .card p {
+  color: var(--secondary-text-color);
+  margin-top: auto;  /* push it to the bottom */
+  padding-block: 10%;
+}
+
+
+
+
 /* --------------------------------------------------
 ----------------- Footer styling -------------------- 
 --------------------------------------------------- */ 
@@ -227,4 +275,11 @@ footer {
     text-align: center;
     color: #9CA3AF;
     font-size: 0.9em;
+}
+
+
+button {
+    border-radius: 10px;
+    background-color: #171717;
+    color: white;
 }

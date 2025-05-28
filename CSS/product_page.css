@@ -1,0 +1,109 @@
+.product-info {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* responsive fallback */
+@media (max-width: 768px) {
+  .product-info {
+    flex-direction: column;
+  }
+}
+
+/* 3/5 of the width */
+.product-image {
+  flex: 3;               /* takes 3 parts of the 3+2 = 5 total */
+  min-width: 0;          /* allow it to shrink on small screens */
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* 2/5 of the width */
+.product-details {
+  flex: 2;               /* takes 2 parts of 5 */
+  min-width: 0;          /* prevent overflow if content is long */
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.tags {
+  margin: 1rem 0;
+}
+
+.tag {
+  display: inline-block;
+  background: #dbc770;
+  padding: 0.3rem 0.6rem;
+  margin-right: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.add-to-cart {
+  padding: 0.7rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* make each accordion fill that 2/5 column */
+.accordion {
+  width: 100%;
+  box-sizing: border-box;  /* include padding in that 100% */
+  margin-bottom: 0.75rem;
+  background: #ecd88b;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+/* keep default downward-only expansion */
+.accordion summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*  for specification section in accordion */
+/*  aligns it with header */
+ul {
+    padding-inline-start: 20px; 
+}
+
+
+/* Use the same carousel for "similar items" 
+but change some attributes to fit design */
+/* --------------------------------------------------
+----------------- Carousel ------------------------ 
+--------------------------------------------------- */ 
+.carousel {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  /* width: fit-content;
+  max-width: 100%;  */
+}
+
+@media (max-width: 769px) {
+  .carousel {
+    grid-template-columns: 1fr; /* one‐col on narrow screens */
+  }
+}
+.carousel .card {
+    max-width:80%;
+}
+.carousel .card img {
+  width: 60%;
+}
+
+.carousel .card span,
+.carousel .card p {
+  font-size: 0.8rem;
+}
+.carousel .card p {
+  padding-block: 6%;
+}

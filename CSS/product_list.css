@@ -1,0 +1,33 @@
+
+/* category title section */
+.title {
+  margin-bottom: 1rem;
+}
+
+.title h2 {
+  margin: 0;
+  font-size: 3.4rem;
+}
+
+.title hr {
+  border: none;
+  border-bottom: 2px solid #ddd;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .title h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+/* view all guitars button */
+.view-guitars {
+    display: flex; 
+    justify-content: center;
+    padding: 1rem;
+    margin-inline: 20%;
+    font-size: 1.25rem;
+}
