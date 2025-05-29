@@ -1,8 +1,70 @@
-/* --------------------------------------------------
------------------ Checkout titles -------------------- 
---------------------------------------------------- */ 
-.checkout h1 {
-    font-family: var(--all-caps-font);
-    font-weight: var(--semi-bold);
+
+
+/* title section */
+h2 {
+  position: relative;
+  left: 35%;
+  margin: -5px;
 }
 
+.divider {
+  width: 100%;
+}
+
+
+
+/*  Main content */
+
+.checkout-container {
+  display: flex;
+  gap: 10%;           /* 10% of the container’s inline size between columns */
+}
+
+/* Left column accordions */
+.checkout-accordions {
+  flex: 0 0 40%;      /* take up 40% of the screen */
+}
+
+
+
+/* Right column: order summary box */
+.order-summary {
+  flex: 0 0 45%;
+  background: #dbc770;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-sizing: border-box;
+  min-width: 280px;
+}
+
+/* fallback: stack at narrow break */
+@media (max-width: 768px) {
+  .checkout-accordions,
+  .order-summary {
+    flex: none;
+    width: 100%;
+  }
+}
+
+
+
+
+/* use the accordion from the product page but add an icon and slightly change style */
+.accordion summary{
+  background: var(--warm-ish-background-color);
+  align-items: center;
+  justify-content:flex-start;
+}
+
+/* icon + text spacing */
+.accordion .icon {
+  margin-right: 0.5rem;
+  display: inline-flex;
+}
+
+/*  correct icon size */
+.accordion .icon img {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--not-rounded);
+}

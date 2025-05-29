@@ -28,6 +28,7 @@ same applies to font style, size and other things... */
 
     /* font */
     /*  default font size is 16px, and i'll try to all other fonts in relation to it */
+    font-size: 13px;
 
     /* if font property not specified then defaults to normal/medium */
     /* if the user machine can't use roboto, then defaults to sans serif */

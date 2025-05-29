@@ -1,5 +1,5 @@
-/* Order-status strip */
-.order-status {
+/* Title strip */
+.title {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -9,9 +9,6 @@
 
 .divider {
   width: 50%;
-  height: 1px;
-  border: none;
-  background-color: #A8A39E;
 }
 
 .status-content {

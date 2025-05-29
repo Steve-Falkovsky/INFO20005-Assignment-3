@@ -1,0 +1,14 @@
+/* --------------------------------------------------
+----------------- Checkout titles -------------------- 
+--------------------------------------------------- */ 
+.checkout h1 {
+    font-family: var(--all-caps-font);
+    font-weight: var(--semi-bold);
+}
+
+
+.divider {
+  height: 1px;
+  border: none;
+  background-color: #A8A39E;
+}

@@ -64,8 +64,33 @@
 
 /* keep default downward-only expansion */
 .accordion summary {
-  font-weight: bold;
+  font-weight: var(--medium);
   cursor: pointer;
+}
+
+/* hide native marker */
+.accordion summary::-webkit-details-marker { display: none; }
+.accordion summary::marker             { content: none; }
+
+/* push content + arrow to opposite ends */
+.accordion summary {
+  display: flex;
+  align-items: center;
+}
+
+
+/* use the up‐arrow glyph and flip it down when closed */
+.accordion summary::after {
+  content: "⌃";             /* base glyph = up arrow */
+  display: inline-block;    
+  transition: transform .2s ease;
+  transform: rotate(180deg); /* down‐arrow for closed */
+  margin-left: auto;   /*  move arrow to right side */
+}
+
+/* remove rotation on open to point up */
+details[open] > summary::after {
+  transform: rotate(0deg);   /* up‐arrow for open */
 }
 
 /*  for specification section in accordion */
