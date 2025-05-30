@@ -1,11 +1,14 @@
-const dlg          = document.getElementById('cartDialog');
-const modalContent = dlg.querySelector('.modal-content');
-const btn          = document.querySelector('.add-to-cart');
-
-btn.addEventListener('click', () => dlg.showModal());
-
-// prevent clicks inside the box from closing it
-modalContent.addEventListener('click', e => e.stopPropagation());
-
-// any click that reaches the <dialog> itself is on the backdrop
-dlg.addEventListener('click', () => dlg.close());
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('[data-include]').forEach(async el => {
+    try {
+      const url = el.getAttribute('data-include');
+      const resp = await fetch(url);
+      if (!resp.ok) throw new Error(resp.statusText);
+      el.innerHTML = await resp.text();
+      // optional: mark as loaded to prevent FOUC
+      el.classList.add('loaded');
+    } catch (err) {
+      console.error('Include failed for', el, err);
+    }
+  });
+});
