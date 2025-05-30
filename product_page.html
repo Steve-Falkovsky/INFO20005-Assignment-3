@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/common.css">
     <link rel="stylesheet" href="CSS/product_page.css">
+    <link rel="stylesheet" href="CSS/popup.css">
     <title>Music Swop Shop</title>
 </head>
 
@@ -27,6 +28,21 @@
           <span class="tag">Good Condition</span>
         </div>
         <button class="add-to-cart">Add to Cart</button>
+
+        <!-- popup when add to cart button is pressed -->
+        <dialog id="cartDialog">
+          <div class="modal-content">
+            <img src="icons/circle_check.png" alt="Success">
+            <h2>Added to cart</h2>
+            <p>Item was added to cart</p>
+            <hr>
+            <form method="dialog">
+              <button>OK</button>
+            </form>
+          </div>
+        </dialog>
+
+
 
         <details class="accordion">
           <summary>Description</summary>
@@ -81,6 +97,11 @@
 
   <!-- loads components like header and footer by looking for a div match-->
   <script src="js/includes.js" defer></script> 
+
+  <!-- add to cart button functionality -->
+  <script src="js/add_to_cart.js" defer></script> 
+
+
 
 </body>
 </html>

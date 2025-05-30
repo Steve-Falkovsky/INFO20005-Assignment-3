@@ -1,0 +1,41 @@
+dialog {
+  border: none;
+  width: 50%;
+  background: var(--category--grid-button-color);
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+dialog hr {
+  margin: 16px;
+  border: none;
+  height: 1px;
+  background: #555;
+}
+
+dialog img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 12px;
+}
+
+/* reset all built-in button styling */
+dialog form button {
+  all: unset;            /* remove margins, padding, borders, font, etc. */ 
+  cursor: pointer;       /* still show it’s clickable */
+  color: inherit;
+  width: 100%;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+@media (max-width: 600px) {
+  dialog {
+    width: 90%;
+    padding: 1em;
+  }
+}
