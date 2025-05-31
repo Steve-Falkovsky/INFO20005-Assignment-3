@@ -62,6 +62,12 @@ body {
     
 }
 
+@media (max-width: 768px) {
+  body {
+    padding-inline:2%; /* reduce padding on mobile */
+  }
+}
+
 
 /* ---------- Overriding defaults -------------- */
 /* unordered list */
@@ -186,30 +192,14 @@ nav a {
   font-weight: var(--medium);
 }
 
-/* Responsive: stack on small screens */
+/* Responsive: hide nav and search on small screens, title and cart on same row */
 @media (max-width: 768px) {
-  header .row {
-    flex-direction: column;
-    align-items: flex-start;
+  header .search-form {
+    display: none; /* Hide the search form */
   }
 
-  header .search {
-    width: 100%;
-  }
-
-  nav ul {
-    flex-direction: column;
-    border-radius: 0;
-  }
-
-  nav li {
-    text-align: left;
-    width: 100%;
-    border-bottom: 1px solid #d2b86e;
-  }
-
-  nav li:last-child {
-    border-bottom: none;
+  nav {
+    display: none; /* Hide the nav */
   }
 }
 
@@ -218,16 +208,11 @@ nav a {
 ----------------- Carousel ------------------------ 
 --------------------------------------------------- */ 
 .carousel {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+  
   gap: 16px;
   padding-inline: 2%;
-}
-
-@media (max-width: 769px) {
-  .carousel {
-    grid-template-columns: 1fr; /* one‐col on narrow screens */
-  }
 }
 
 .carousel .card {
@@ -236,6 +221,17 @@ nav a {
   cursor: pointer;
   transition: transform 0.2s;
   border: 1px solid #E5E7EB;
+  box-sizing: border-box; /* Ensures padding and border are included in the item's total width/height */
+  
+  /* Flex properties:
+     - flex-shrink: 0 prevents items from shrinking below their basis, forcing scroll.
+     - flex-grow: 0 prevents items from growing if there's extra space (e.g. fewer than 4 items).
+     - flex-basis defines the ideal width, aiming for 4 items in view on desktop.
+       On mobile, items will also take this proportion of the container width and scroll.
+  */
+  flex-shrink: 0; 
+  flex-grow: 0;   
+  flex-basis: calc(25% - 12px); /* Each item aims for 1/4 of container width, accounting for 3 gaps */
 }
 
 .carousel .card:hover,
@@ -251,11 +247,23 @@ nav a {
 .carousel .card span,
 .carousel .card p {
   font-size: 1.4rem;
+  padding: 0% 3%;
 }
 .carousel .card p {
   color: var(--secondary-text-color);
   margin-top: auto;  /* push it to the bottom */
   padding-block: 10%;
+}
+
+
+@media (max-width: 769px) {
+  .carousel {
+    overflow-x: auto;  /* Enable horizontal scrolling */
+  }
+  .carousel .card {
+    flex-basis: 200px; /* Set a fixed base width for cards on mobile */
+    /* Adjust this value as needed to achieve the desired card size */
+  }
 }
 
 
@@ -267,17 +275,17 @@ nav a {
 
 /* note this matches the footer HTML tag, not a class or ID named "footer" */
 footer {
-    background-color: var(--footer-color);
-    padding: 26px 13px; /* top and bottom are 26px, left and right are 13px */
-    border-radius:var(--not-rounded);
-    margin-inline: -5%;
+  background-color: var(--footer-color);
+  padding: 26px 13px; /* top and bottom are 26px, left and right are 13px */
+  border-radius:var(--not-rounded);
+  margin-inline: -5%; /* Makes footer wider than main content area (body padding 10% -> content 80%, footer 80% + 2*5% = 90%) */
 }
 
 .footer-grid {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: 30% 25% 15% 30%;
-    gap: 1rem, 3rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 30% 25% 15% 30%;
+  gap: 1rem 3rem;
 }
 
 .footer-column {
@@ -285,35 +293,63 @@ footer {
 }
 
 .footer-column h4 {
-    color: white;
-    font-weight: bold;
+  color: white;
+  font-weight: bold;
 }
 
 .footer-column ul {
-    color: var(--footer-secondary-text-color);
-    list-style: none;
+  color: var(--footer-secondary-text-color);
+  list-style: none;
 }
 
 .footer-column p {
-    color: var(--footer-secondary-text-color);
-    font-size: 0.9em;
-    line-height: 1.7;
+  color: var(--footer-secondary-text-color);
+  font-size: 0.9em;
+  line-height: 1.7;
 }
 
 .footer-column ul li {
-    margin-bottom: 10px;
-    font-size: 0.9em;
+  margin-bottom: 10px;
+  font-size: 0.9em;
 }
 
 .footer-bottom {
-    text-align: center;
-    color: #9CA3AF;
-    font-size: 0.9em;
+  text-align: center;
+  color: #9CA3AF;
+  font-size: 0.9em;
+  margin-top: 1.5rem; /* Added some top margin for spacing */
 }
 
+/* Scoped button style to footer context */
+footer button {
+  border-radius: 10px;
+  background-color: #171717;
+  color: white;
+  padding: 0.5em 1em; /* Added some default padding */
+  border: none;
+  cursor: pointer;
+}
 
-button {
-    border-radius: 10px;
-    background-color: #171717;
-    color: white;
+/* Mobile design for footer */
+@media (max-width: 768px) {
+  footer {
+  background-image: url('../images/mobile_footer.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent; /* Hide original background color */
+  
+  /* Make footer full screen width by counteracting body's mobile padding (2%) */
+  margin-inline: -2%;
+  padding: 0; /* Remove original padding */
+  height: 150px; /* Adjust height as needed for your image aspect ratio */
+  /* border-radius: var(--not-rounded); is inherited and remains 0px */
+  }
+
+  /* Hide original footer content on mobile */
+  footer .footer-grid,
+  footer .footer-bottom,
+  footer button { /* Also hide any buttons that were part of the original footer content */
+  display: none;
+  }
 }

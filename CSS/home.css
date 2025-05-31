@@ -7,7 +7,7 @@
 }
 
 .banner div {
-    padding: 0% 10% 5%;
+    padding: 0% 10% 5%; /* top, left/right, bottom */
 }
 /* styling for banner headers */
 .banner h2 {
@@ -21,7 +21,6 @@
 .banner p {
     color: #D0CAC4;
     font-size: 1.6rem;
-    line-height: 1.4;
 }
 
 .banner button {
@@ -32,6 +31,28 @@
     padding: 2% 5%;
 }
 
+/* Mobile specific styles for the banner */
+@media (max-width: 768px) {
+    .banner div {
+        /* Adjust padding for smaller screens: top/bottom 4%, left/right 6% */
+        /* This reduces horizontal padding and adjusts vertical padding */
+        padding: 4% 6%; 
+    }
+
+    .banner h2 {
+        font-size: 1.8rem; /* Reduced font size from 2.2rem */
+    }
+
+    .banner p {
+        font-size: 1.2rem; /* Reduced font size from 1.6rem */
+    }
+
+    .banner button {
+        font-size: 1.2rem; /* Reduced font size from 1.6rem */
+        padding: 4% 6%;   /* Adjusted button padding for smaller size */
+    }
+}
+
 
 
 /* --------------------------------------------------
@@ -40,11 +61,6 @@
 .category-grid {
     display: grid;
     /* minmax specifies the min and max sizes that the column can be when resizing the page */
-    /* three 300px‐wide columns */ 
-    /* grid-template-columns: repeat(3, 300px);  */
-    /* two 160px‐tall rows */ 
-    /* grid-template-rows: repeat(2, 160px);  */
-
     /* 3 equal columns that share the available space */
     grid-template-columns: repeat(3, minmax(0, 1fr));
     
@@ -93,16 +109,34 @@
   margin-left: 8px;
 }
 
-@media(max-width: 769px) {
-      .grid {
-        grid-template-columns: 1fr; /* single flexible column */ 
-        grid-auto-rows: 160px; /* preserve card height */ 
-      }
-      .card {
-        max-width: 300px; /* keep cards from stretching too wide */ 
-        margin: 0 auto; /* center cards in the column */ 
-      }
+@media (max-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+        grid-auto-rows: auto; /* Row height determined by card content and aspect-ratio */
+        /* gap: 16px; is inherited from the base .category-grid style */
     }
+
+    .category-grid .card {
+        aspect-ratio: 5 / 3; /* Cards will be wider than tall*/
+        /* Inherits display:flex and alignment properties for its content */
+    }
+
+    /* Decrease image size on smaller screens */
+    .category-grid .card img {
+        height: 35px; /* Adjusted from original 50px */
+        margin-bottom: 0.3rem; /* Adjusted for smaller image */
+    }
+
+    /* Decrease text size on smaller screens */
+    .category-grid .card span {
+        font-size: 1.4rem; /* Adjusted from original 1.8rem */
+    }
+
+    /* Hide the last two cards on mobile */
+    .category-grid .card.mobile-hidden {
+        display: none;
+    }
+}
 
 
 /* --------------------------------------------------
