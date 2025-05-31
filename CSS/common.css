@@ -81,6 +81,16 @@ a {
 * {
   border-radius: 16px;
 }
+/* Override for images */
+img {
+  border-radius: 0;
+}
+
+
+
+
+
+
 
 
 /* --------------------------------------------------
@@ -103,37 +113,58 @@ header .title {
   font-weight: bold;
 }
 
-.search {
-  flex: 1;
+.search-form {
+  position: relative;               /* Containing block for the button */
+  width: 38%;                      /* make the bar 70% wide */
+  flex: 0 0 auto;                  /* prevent it from growing or shrinking */
+  margin-left: auto; 
   max-width: 400px;
+  margin-right: 1rem;              /* optional spacing between search & cart */
+  position: relative;              /* keep your button-inside positioning */
 }
-
-.search input {
+.search-form input[type="search"] {
   width: 100%;
-  padding: 0.5rem 1rem;
-  border-radius: var(--corner-radius);
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 9999px;            /* Fully rounded (pill) */
   font-size: 1rem;
+  background-color: #fff;
+}
+.search-form button {
+  position: absolute;               /* Place icon inside input */ 
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+.search-form button img {
+  width: 1rem;
+  height: 1rem;
 }
 
-.cart-icon {
-  position: relative;
-  font-size: 1.5rem;
+/* 5. Cart icon + badge */
+.cart {
+  position: relative;               /* Containing block for badge */      /* :contentReference[oaicite:3]{index=3} */
 }
-
-.cart-icon::before {
-  content: "🛒";
-  font-size: 1.8rem;
+.cart img {
+  width: 2rem;
+  height: 2rem;
 }
-
-/*  The cart circle? */
-.cart-icon span {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background: #2c2c2c;
-  color: white;
+.cart .badge {
+  position: absolute;               /* Position over top-right of cart */ /* :contentReference[oaicite:4]{index=4} */
+  top: -0.25rem;
+  right: -0.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #2c3e50;
+  color: #fff;
   border-radius: 50%;
-  padding: 2px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.75rem;
 }
 

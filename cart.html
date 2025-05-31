@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/common.css">
+    <link rel="stylesheet" href="CSS/product_page.css">     <!-- for accordion -->
+    <link rel="stylesheet" href="CSS/pay_common.css">
+    <link rel="stylesheet" href="CSS/checkout.css">
+    <title>Music Swop Shop</title>
+</head>
+
+<body>
+    
+    <div data-include="components/header.html"></div>
+
+    <section>
+    <h2>CART</h2>
+    <hr class="divider">
+    </section>
+
+  <div class="checkout-container">
+
+  <!-- Left: Accordions -->
+  
+
+
+  <!-- Right: Order summary -->
+  <div class="right-container">
+    <div class="summary">
+      <div class="row"><span>Subtotal</span><span class="price">$1,299.00</span></div>
+      <div class="row"><span>Shipping</span><span class="price">$25.00</span></div>
+      <div class="row total"><span>Total</span><span class="price">$1,324.00</span></div>
+    </div>
+    <button class="proceed-to-checkout">Proceed to Checkout</button>
+  </div>
+
+
+  </div>
+  
+
+
+    <div data-include="components/footer.html"></div>
+
+
+    <!-- loads components like header and footer by looking for a div match-->
+    <script src="js/includes.js" defer></script> 
+
+</body>
+</html>

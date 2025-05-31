@@ -1,8 +1,21 @@
 <header>
   <div class="row">
     <a href="home.html" class="title">The Music Swop Shop</a>
-    <form class="search">Search instruments, brands, etc...</form>
-    <a href="cart.html" class="cart-icon"><span>2</span></a> <!-- what is span here?-->
+    <form class="search-form" role="search" aria-label="Site search">
+        <input
+          type="search"
+          id="site-search"
+          name="q"
+          placeholder="Search instruments, brands, etc."
+        />
+        <button type="submit" aria-label="Submit search">
+          <img src="icons/homepage/magnifying_glass.png" alt="🔍">
+        </button>
+      </form>
+      <div class="cart" aria-label="Shopping cart">
+        <img src="icons/homepage/empty_cart.png" alt="Cart">
+        <span class="badge">1</span>
+      </div>
   </div>
   
   <!-- category bar -->
