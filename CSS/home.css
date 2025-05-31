@@ -28,9 +28,8 @@
     background-color: var(--background-color);
     color: #171717;
     font-size: 1.6rem;
-    border-radius: 0.5rem;
     border-width: 0.1rem;
-    padding: 2% 2%;
+    padding: 2% 5%;
 }
 
 
@@ -106,3 +105,84 @@
     }
 
 
+/* --------------------------------------------------
+----------------- About us      -------------------- 
+--------------------------------------------------- */ 
+
+.about-us {
+  padding: 2rem 1rem; /* top-bottom 2, left right 1 */
+}
+
+/* Container uses flex to create two “columns” */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;                       /* space between left & right sections */
+  align-items: flex-start;
+  align-items: center;
+}
+
+/* ---------------------------------------------
+   3. LEFT SIDE: MISSION ICON + TEXT
+   --------------------------------------------- */
+.mission-wrapper {
+  display: flex;
+  flex: 0 1 40%;                   /* base width ~40%, but can shrink/grow */
+  min-width: 20rem;                /* never collapse below ~320px */
+  gap: 1rem;                       /* gap between icon and text ~16px */
+  align-items: flex-start;
+}
+
+/* Icon sizing using rem */
+.icon {
+  width: 3rem;
+  padding-top: 4%;
+}
+
+.mission-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title and paragraph typography */
+.mission-title {
+  font-size: 1.5rem;        
+  font-weight: 600;
+  margin-bottom: 0.5rem;         
+}
+
+.mission-description {
+  font-size: 1rem;       
+  line-height: 1.4;            
+  color: #444;
+}
+
+/* ---------------------------------------------
+   4. RIGHT SIDE: MAP IMAGE
+   --------------------------------------------- */
+.map-wrapper {
+  flex: 1 1 0;                   /* base width ~50%, but can shrink/grow */
+  min-width: 10rem;   
+}
+
+.map-image {
+  display: block;
+  width: 100%;                     /* fill the container’s width */
+  height: auto;                    /* keep aspect ratio */
+  border-radius: 0.5rem;           /* ~8px rounding on corners */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------------------------
+   5. RESPONSIVE STACKING
+   --------------------------------------------- */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;       /* stack mission above map */
+  }
+  .mission-wrapper,
+  .map-wrapper {
+    flex: 1 1 100%;               /* each takes full width */
+    min-width: auto;
+  }
+}
