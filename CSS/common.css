@@ -353,3 +353,21 @@ footer button {
   display: none;
   }
 }
+
+
+/* --------------------------------------------------
+----------------- Action button -------------------- 
+--------------------------------------------------- */ 
+.action-button {
+  display: block;
+  width: 100%;
+  margin-inline: auto; /* This will center the button if width is not 100% */
+  padding: 1rem;
+  text-align: center;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}

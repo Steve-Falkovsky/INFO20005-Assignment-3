@@ -24,10 +24,14 @@
 
 
 /* view all guitars button */
-.view-guitars {
-    display: flex; 
-    justify-content: center;
-    padding: 1rem;
-    margin-inline: 20%;
+.action-button {
     font-size: 1.25rem;
+    width: 50%;
+}
+
+@media (max-width: 769px) {
+  .carousel .card {
+    flex-basis: 140px; /* Reduced from 200px */
+    /* Adjust this value as needed */
+  }
 }

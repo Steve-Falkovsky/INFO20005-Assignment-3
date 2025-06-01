@@ -40,32 +40,33 @@
 
 .tag {
   display: inline-block;
-  background: #dbc770;
+  background: #D4AF37;
   padding: 0.3rem 0.6rem;
   margin-right: 0.5rem;
   border-radius: 6px;
   font-size: 0.85rem;
 }
 
-.add-to-cart {
-  padding: 0.7rem 1.5rem;
-  margin-bottom: 1.5rem;
+.action-button {
+  margin-inline:unset;
+  width:50%;
+  margin-bottom: 5%;
 }
 
-/* make each accordion fill that 2/5 column */
 .accordion {
   width: 100%;
   box-sizing: border-box;  /* include padding in that 100% */
   margin-bottom: 0.75rem;
-  background: #ecd88b;
-  padding: 0.5rem;
-  border-radius: 6px;
+  background: var(--warm-background-color);
+  padding: 1rem 0.5rem;
+  border-radius: 10px;
 }
 
 /* keep default downward-only expansion */
 .accordion summary {
   font-weight: var(--medium);
   cursor: pointer;
+  padding-left: 3%;
 }
 
 /* hide native marker */
@@ -96,7 +97,7 @@ details[open] > summary::after {
 /*  for specification section in accordion */
 /*  aligns it with header */
 ul {
-    padding-inline-start: 20px; 
+    padding-inline-start: 2rem; 
 }
 
 
@@ -105,30 +106,18 @@ but change some attributes to fit design */
 /* --------------------------------------------------
 ----------------- Carousel ------------------------ 
 --------------------------------------------------- */ 
-.carousel {
-  display: inline-grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  /* width: fit-content;
-  max-width: 100%;  */
-}
-
-@media (max-width: 769px) {
-  .carousel {
-    grid-template-columns: 1fr; /* one‐col on narrow screens */
-  }
-}
-.carousel .card {
-    max-width:80%;
-}
-.carousel .card img {
-  width: 60%;
+.carousel .card {  
+  flex-basis: calc(15%);
 }
 
 .carousel .card span,
 .carousel .card p {
-  font-size: 0.8rem;
+  font-size: 1.2rem; /* Reduced from 1.4rem */
 }
-.carousel .card p {
-  padding-block: 6%;
+
+@media (max-width: 769px) {
+  .carousel .card {
+    flex-basis: 120px; /* Reduced from 200px */
+    /* Adjust this value as needed */
+  }
 }

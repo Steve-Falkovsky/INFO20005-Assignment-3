@@ -34,7 +34,7 @@ h2 {
   border-radius: 1rem;
 }
 
-/* 4. Item card */
+/* Item card */
 .item-card {
   background-color: var(--background-color);
   opacity: 70%;
@@ -73,7 +73,7 @@ h2 {
   color: var(--secondary-text-color);
 }
 
-/* 5. Summary lines */
+/* Summary lines */
 .summary .row {
   display: flex;
   justify-content: space-between;
@@ -93,21 +93,6 @@ h2 {
   font-size: 1rem;
 }
 
-/* 6. Place Order button */
-.place-order {
-  display: block;
-  width: 100%;
-  padding: 1rem;
-  text-align: center;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-/* 7. Responsive tweaks */
 @media (max-width: 500px) {
   .container {
     padding: 1rem;
@@ -136,7 +121,7 @@ h2 {
 
 
 /* use the accordion from the product page but add an icon and slightly change style */
-.accordion summary{
+.accordion{
   background: var(--warm-ish-background-color);
 }
 
