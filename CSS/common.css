@@ -192,6 +192,11 @@ nav a {
   font-weight: var(--medium);
 }
 
+.divider.mobile-show {
+  display: none;
+  background-color: #E5E7EB;
+}
+
 /* Responsive: hide nav and search on small screens, title and cart on same row */
 @media (max-width: 768px) {
   header .search-form {
@@ -201,6 +206,10 @@ nav a {
   nav {
     display: none; /* Hide the nav */
   }
+
+  .divider.mobile-show {
+  display: block;
+  } 
 }
 
 

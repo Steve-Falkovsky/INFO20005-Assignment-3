@@ -14,7 +14,7 @@ h2 {
 
 /* Left column: a list of items in cart */
 .left-container {
-  flex: 0 0 40%;      /* take up 40% of the screen */
+  flex: 0 0 50%;      /* take up 50% of the screen */
 }
 
 /* Item card */
@@ -80,6 +80,7 @@ h2 {
 
 /* Right column: order summary box */
 .right-container {
+  flex: 0 0 30%;  
   background-color: var(--warm-background-color);
   padding: 2rem;
   border-radius: 1rem;
