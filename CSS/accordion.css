@@ -43,8 +43,16 @@ details[open] > summary::after {
 /*  aligns it with header */
 .accordion ul {
     padding-inline-start: 2rem; 
+    padding-right: 1rem;
 }
 
 .accordion p {
     padding-inline-start: 1rem; 
+    padding-right: 1rem;
+}
+
+.accordion p, 
+.accordion li {
+  color: var(--secondary-text-color);
+  font-size: 1.5rem;
 }

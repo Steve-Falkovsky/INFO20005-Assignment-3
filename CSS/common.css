@@ -283,10 +283,6 @@ nav a {
     flex-basis: 200px; /* Set a fixed base width for cards on mobile */
     /* Adjust this value as needed to achieve the desired card size */
   }
-  .carousel .card span,
-  .carousel .card p {
-    font-size: 1rem; /* Smaller font size for span and p in cards on mobile */
-  }
 }
 
 

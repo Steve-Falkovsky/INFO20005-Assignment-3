@@ -23,6 +23,10 @@
   .carousel .card {
     flex-basis: 140px; /* Reduced from 200px */
   }
+  .carousel .card span,
+  .carousel .card p {
+    font-size: 1rem; /* Smaller font size for span and p in cards on mobile */
+  }
 
   .action-button {
     width: 70%;
