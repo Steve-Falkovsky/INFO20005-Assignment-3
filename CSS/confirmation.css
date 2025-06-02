@@ -20,7 +20,7 @@
   text-align: center;    /* center the text exactly */
   font-family: var(--all-caps-font);
   font-weight: var(--semi-bold);
-  font-size: 1rem;
+  font-size: 1.5rem;
   letter-spacing: 1px;
 }
 
@@ -41,20 +41,20 @@
 }
 
 .confirmation-card h1 {
-    font-size: 1.25rem;
+    font-size: 1.8rem;
     font-weight: var(--medium);
     text-align: center;
 }
 
 .confirmation-card p {
   margin: 2% 10%;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 /* Mobile-first responsive tweaks */
 @media screen and (max-width: 600px) {
   .status-content h2 {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
   }
   .confirmation-card {
     width: 80%;
@@ -63,9 +63,10 @@
     margin-right: auto;
   }
   .confirmation-card h1 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
   .confirmation-card p {
-  margin: 5% 5%;
+    margin: 5% 5%;
+    font-size: 1rem;
   }
 }
