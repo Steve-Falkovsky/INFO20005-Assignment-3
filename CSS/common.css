@@ -368,7 +368,6 @@ footer button {
   margin-inline: -2%;
   padding: 0; /* Remove original padding */
   height: 150px; /* Adjust height as needed for your image aspect ratio */
-  /* border-radius: var(--not-rounded); is inherited and remains 0px */
   }
 
   /* Hide original footer content on mobile */
