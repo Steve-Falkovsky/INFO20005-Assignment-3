@@ -35,6 +35,7 @@ same applies to font style, size and other things... */
     font-family: "Roboto", sans-serif; 
     --all-caps-font: "Poppins", sans-serif;
     /* font weights */
+    --normal: 400;
     --medium: 500;
     --semi-bold: 600;
 
@@ -133,7 +134,7 @@ header .title {
   padding: 0.5rem 2.5rem 0.5rem 1rem;
   border: 1px solid #ccc;
   border-radius: 9999px;            /* Fully rounded (pill) */
-  font-size: 1rem;
+  font-size: 1.2rem;
   background-color: #fff;
 }
 .search-form button {
@@ -186,6 +187,7 @@ nav ul {
 nav li {
   /* top and bottom then sides */
   padding: 0.75rem 2rem; 
+  font-size: 1.3rem;
 }
 
 nav a {
@@ -194,7 +196,6 @@ nav a {
 
 .divider.mobile-show {
   display: none;
-  background-color: #E5E7EB;
 }
 
 /* Responsive: hide nav and search on small screens, title and cart on same row */
@@ -216,6 +217,12 @@ nav a {
 /* --------------------------------------------------
 ----------------- Carousel ------------------------ 
 --------------------------------------------------- */ 
+.carousel-container h2 {
+  font-size: 2.5rem;
+  font-weight: var(--normal);
+  padding-inline-start: 2%;
+}
+
 .carousel {
   display: flex;
   flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
@@ -235,8 +242,6 @@ nav a {
   /* Flex properties:
      - flex-shrink: 0 prevents items from shrinking below their basis, forcing scroll.
      - flex-grow: 0 prevents items from growing if there's extra space (e.g. fewer than 4 items).
-     - flex-basis defines the ideal width, aiming for 4 items in view on desktop.
-       On mobile, items will also take this proportion of the container width and scroll.
   */
   flex-shrink: 0; 
   flex-grow: 0;   
@@ -251,17 +256,18 @@ nav a {
 .carousel .card img {
   width: 100%;
   height: auto;
+  margin-bottom: 0.5rem;
+
 }
 
 .carousel .card span,
 .carousel .card p {
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   padding: 0% 3%;
 }
 .carousel .card p {
+  font-size: 1.7rem;
   color: var(--secondary-text-color);
-  margin-top: auto;  /* push it to the bottom */
-  padding-block: 10%;
 }
 
 
@@ -310,22 +316,24 @@ footer {
   color: var(--footer-secondary-text-color);
   list-style: none;
 }
+.footer-column p, 
+.footer-column ul li,
+.footer-bottom {
+  font-size: 1.1em;
+}
 
 .footer-column p {
   color: var(--footer-secondary-text-color);
-  font-size: 0.9em;
   line-height: 1.7;
 }
 
 .footer-column ul li {
   margin-bottom: 10px;
-  font-size: 0.9em;
 }
 
 .footer-bottom {
   text-align: center;
   color: #9CA3AF;
-  font-size: 0.9em;
   margin-top: 1.5rem; /* Added some top margin for spacing */
 }
 
@@ -395,5 +403,5 @@ footer button {
   width: 100%;
   height: 1px;
   border: none;
-  background-color: #A8A39E;
+  background-color: #E5E7EB;
 }

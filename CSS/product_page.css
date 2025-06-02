@@ -11,6 +11,7 @@
   }
 }
 
+/* Left Side */
 /* 3/5 of the width */
 .product-image {
   flex: 3;               /* takes 3 parts of the 3+2 = 5 total */
@@ -18,11 +19,16 @@
 }
 
 .product-image img {
-  width: 100%;
+  width: 85%;
+  aspect-ratio: 1 / 1;
+  object-fit:cover;   /* crop */
   height: auto;
   border-radius: 8px;
 }
 
+
+
+/* Right Side */
 /* 2/5 of the width */
 .product-details {
   flex: 2;               /* takes 2 parts of 5 */
@@ -31,11 +37,12 @@
 
 .price {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
 }
 
 .tags {
   margin: 1rem 0;
+  font-size: 1.2rem;
 }
 
 .tag {
@@ -44,15 +51,24 @@
   padding: 0.3rem 0.6rem;
   margin-right: 0.5rem;
   border-radius: 6px;
-  font-size: 0.85rem;
+  font-size: 1.3rem;
 }
 
 .action-button {
   margin-inline:unset;
   width:50%;
   margin-bottom: 5%;
+  font-size: 1.3rem;
 }
 
+
+details.accordion summary {
+  font-size: 1.5rem;
+}
+
+details.accordion p {
+  font-size: 1.2rem;
+}
 
 
 

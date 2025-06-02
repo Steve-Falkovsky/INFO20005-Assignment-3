@@ -13,7 +13,7 @@
 
 const dlg          = document.getElementById('cartDialog');
 const modalContent = dlg.querySelector('.modal-content');
-const btn          = document.querySelector('.add-to-cart');
+const btn          = document.querySelector('.action-button');
 
 btn.addEventListener('click', () => dlg.showModal());
 

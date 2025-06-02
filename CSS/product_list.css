@@ -7,21 +7,8 @@
 .title h2 {
   margin: 0;
   font-size: 3.4rem;
+  font-weight: var(--normal);
 }
-
-.title hr {
-  border: none;
-  border-bottom: 2px solid #A8A39E;
-  margin-top: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .title h2 {
-    font-size: 1.5rem;
-  }
-}
-
-
 
 /* view all guitars button */
 .action-button {
@@ -30,6 +17,10 @@
 }
 
 @media (max-width: 769px) {
+  .title h2 {
+    font-size: 1.5rem;
+  }
+
   .carousel .card {
     flex-basis: 140px; /* Reduced from 200px */
     /* Adjust this value as needed */

@@ -1,5 +1,5 @@
 /* Title strip */
-.title {
+.order-complete {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
   margin-bottom: 20px;
 }
 
-.divider {
+.order-complete .divider {
   width: 50%;
 }
 
@@ -57,7 +57,10 @@
     font-size: 0.9rem;
   }
   .confirmation-card {
-    padding: 15px;
+    width: 80%;
+    /* center the card */
+    margin-left: auto;
+    margin-right: auto;
   }
   .confirmation-card h1 {
     font-size: 1.1rem;

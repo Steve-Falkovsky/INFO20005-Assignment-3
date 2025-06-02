@@ -41,6 +41,10 @@ details[open] > summary::after {
 
 /*  for specification section in accordion */
 /*  aligns it with header */
-ul {
+.accordion ul {
     padding-inline-start: 2rem; 
+}
+
+.accordion p {
+    padding-inline-start: 1rem; 
 }

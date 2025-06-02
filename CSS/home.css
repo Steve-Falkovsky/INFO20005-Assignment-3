@@ -167,9 +167,8 @@
   align-items: flex-start;
 }
 
-/* Icon sizing using rem */
 .icon {
-  width: 3rem;
+  width: 6rem;
   padding-top: 4%;
 }
 
@@ -180,13 +179,13 @@
 
 /* Title and paragraph typography */
 .mission-title {
-  font-size: 1.5rem;        
+  font-size: 3rem;        
   font-weight: 600;
   margin-bottom: 0.5rem;         
 }
 
 .mission-description {
-  font-size: 1rem;       
+  font-size: 1.6rem;       
   line-height: 1.4;            
   color: #444;
 }
