@@ -4,10 +4,15 @@
   margin-bottom: 2rem;
 }
 
-/* responsive fallback */
 @media (max-width: 768px) {
   .product-info {
     flex-direction: column;
+  }
+  .product-image {
+    text-align: center; /* Added to center the image content */
+  }
+  .action-button {
+    font-size: 1.3rem;
   }
 }
 
@@ -35,8 +40,11 @@
   min-width: 0;          /* prevent overflow if content is long */
 }
 
+.product-details h1 {
+  font-weight: var(--normal);
+}
+
 .price {
-  font-weight: bold;
   font-size: 1.7rem;
 }
 
@@ -50,7 +58,6 @@
   background: #D4AF37;
   padding: 0.3rem 0.6rem;
   margin-right: 0.5rem;
-  border-radius: 6px;
   font-size: 1.3rem;
 }
 
@@ -58,7 +65,6 @@
   margin-inline:unset;
   width:50%;
   margin-bottom: 5%;
-  font-size: 1.3rem;
 }
 
 

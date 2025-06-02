@@ -9,7 +9,7 @@
 
 /* keep default downward-only expansion */
 .accordion summary {
-  font-weight: var(--medium);
+  font-weight: var(--normal);
   cursor: pointer;
   padding-left: 3%;
 }

@@ -1,5 +1,5 @@
 dialog {
-    box-sizing: border-box;
+  box-sizing: border-box;
   border: none;
   width: 50%;
   background: var(--category--grid-button-color);
@@ -27,6 +27,7 @@ dialog form button {
   cursor: pointer;       /* still show it’s clickable */
   color: inherit;
   width: 100%;
+  font-size: 1.4rem;
 }
 
 dialog::backdrop {

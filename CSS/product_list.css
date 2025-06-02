@@ -12,17 +12,19 @@
 
 /* view all guitars button */
 .action-button {
-    font-size: 1.25rem;
     width: 50%;
 }
 
 @media (max-width: 769px) {
   .title h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .carousel .card {
     flex-basis: 140px; /* Reduced from 200px */
-    /* Adjust this value as needed */
   }
+
+  .action-button {
+    width: 70%;
+}
 }

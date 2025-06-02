@@ -218,4 +218,14 @@
     flex: 1 1 100%;               /* each takes full width */
     min-width: auto;
   }
+  .mission-title {
+    font-size: 2.4rem; /* Reduced from 3rem */
+  }
+  .mission-description {
+    font-size: 1.4rem; /* Reduced from 1.6rem */
+  }
+  .icon {
+    width: 4rem; /* Reduced from 6rem */
+    padding-top: 7%;
+  }
 }
