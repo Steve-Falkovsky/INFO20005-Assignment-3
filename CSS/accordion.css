@@ -45,13 +45,19 @@ details[open] > summary::after {
 /*  for specification section in accordion */
 /*  aligns it with header */
 .accordion ul {
-  padding-inline-start: 2rem;
-  padding-right: 1rem;
+  padding-inline-start: 1rem;
 }
 
+/* remove defaults which interfere with padding */
 .accordion p {
-  padding-inline-start: 1rem;
-  padding-right: 1rem;
+  margin-block-start: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  margin-block-end: 0;
+}
+
+.accordion-content {
+  padding: 1rem 1rem 0rem 1rem;
 }
 
 .accordion p,
