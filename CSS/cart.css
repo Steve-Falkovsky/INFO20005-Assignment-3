@@ -9,6 +9,8 @@ h2 {
 .checkout-container {
   display: flex;
   gap: 10%; /* 10% of the container’s inline size between columns */
+  align-items: flex-start; /* prevent children stretching vertically */
+
 }
 
 /* Left column: a list of items in cart */
