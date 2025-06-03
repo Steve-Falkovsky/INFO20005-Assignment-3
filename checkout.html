@@ -89,48 +89,35 @@
           <details class="accordion all-items">
             <summary>Item Summary</summary>
 
-            <div class="accordion-content">
-              <div class="item-card">
-                <img src="images/strat.png" alt="Fender stratocaster" />
-                <div class="item-details">
-                  <div class="item-header">
-                    <span class="item-title">Fender Stratocaster 1982</span>
-                    <span class="item-price">$1,299.00</span>
-                  </div>
-                  <div class="item-subtitle">Used, Good Condition</div>
-                </div>
-              </div>
+            <div class="accordion-content" id="checkout-items-mobile-container">
+              <!-- Mobile cart items will be dynamically inserted here -->
             </div>
           </details>
         </div>
 
         <!-- Right: Order summary -->
         <div class="right-container">
-          <div class="item-card mobile-hidden">
-            <img src="images/strat.png" alt="Fender stratocaster" />
-            <div class="item-details">
-              <div class="item-header">
-                <span class="item-title">Fender Stratocaster 1982</span>
-                <span class="item-price">$1,299.00</span>
-              </div>
-              <div class="item-subtitle">Used, Good Condition</div>
-            </div>
+          <div id="checkout-items-desktop-container" class="mobile-hidden">
+            <!-- Desktop cart items will be dynamically inserted here -->
           </div>
 
           <div class="summary">
             <div class="row">
-              <span>Subtotal</span><span class="price">$1,299.00</span>
+              <span>Subtotal</span
+              ><span class="price" id="checkout-subtotal">$0.00</span>
             </div>
             <div class="row">
-              <span>Shipping</span><span class="price">$25.00</span>
+              <span>Shipping</span
+              ><span class="price" id="checkout-shipping">$0.00</span>
             </div>
             <div class="row total">
-              <span>Total</span><span class="price">$1,324.00</span>
+              <span>Total</span
+              ><span class="price" id="checkout-total">$0.00</span>
             </div>
           </div>
           <a href="purchase_confirmation.html"
-            ><button class="action-button">Place Order</button></a
-          >
+            ><button class="action-button">Place Order</button>
+          </a>
         </div>
       </div>
     </main>
@@ -139,5 +126,7 @@
 
     <!-- loads components like header and footer by looking for a div match-->
     <script src="js/includes.js" type="module" defer></script>
+    <!-- checkout page logic -->
+    <script src="js/checkout.js" type="module" defer></script>
   </body>
 </html>
