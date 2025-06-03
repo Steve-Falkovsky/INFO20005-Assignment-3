@@ -12,12 +12,12 @@
 }
 
 .status-content {
-  position: relative;    /* establish containing block */
+  position: relative; /* establish containing block */
   padding: 10px 0;
 }
 .status-content h2 {
   margin: 0;
-  text-align: center;    /* center the text exactly */
+  text-align: center; /* center the text exactly */
   font-family: var(--all-caps-font);
   font-weight: var(--semi-bold);
   font-size: 1.5rem;
@@ -25,9 +25,9 @@
 }
 
 .status-content .checkmark {
-  position: absolute;    /* remove from normal flow */
-  top: 50%;              /* vertically center it */
-  right: -20%;           /* push it right from the right edge */
+  position: absolute; /* remove from normal flow */
+  top: 50%; /* vertically center it */
+  right: -20%; /* push it right from the right edge */
   transform: translateY(-50%); /* vertical centering */
 }
 
@@ -41,9 +41,9 @@
 }
 
 .confirmation-card h1 {
-    font-size: 1.8rem;
-    font-weight: var(--medium);
-    text-align: center;
+  font-size: 1.8rem;
+  font-weight: var(--medium);
+  text-align: center;
 }
 
 .confirmation-card p {

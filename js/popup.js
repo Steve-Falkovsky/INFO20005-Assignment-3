@@ -8,17 +8,16 @@
 //     if (e.target === dlg) {
 //         dlg.close();
 //     }
-// });  // backdrop clicks close the dialog 
+// });  // backdrop clicks close the dialog
 
+const dlg = document.getElementById("cartDialog");
+const modalContent = dlg.querySelector(".modal-content");
+const btn = document.querySelector(".action-button");
 
-const dlg          = document.getElementById('cartDialog');
-const modalContent = dlg.querySelector('.modal-content');
-const btn          = document.querySelector('.action-button');
-
-btn.addEventListener('click', () => dlg.showModal());
+btn.addEventListener("click", () => dlg.showModal());
 
 // prevent clicks inside the box from closing it
-modalContent.addEventListener('click', e => e.stopPropagation());
+modalContent.addEventListener("click", (e) => e.stopPropagation());
 
 // any click that reaches the <dialog> itself is on the backdrop
-dlg.addEventListener('click', () => dlg.close());
+dlg.addEventListener("click", () => dlg.close());

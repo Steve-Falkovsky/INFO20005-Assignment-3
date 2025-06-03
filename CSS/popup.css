@@ -23,8 +23,8 @@ dialog img {
 
 /* reset all built-in button styling */
 dialog form button {
-  all: unset;            /* remove margins, padding, borders, font, etc. */ 
-  cursor: pointer;       /* still show it’s clickable */
+  all: unset; /* remove margins, padding, borders, font, etc. */
+  cursor: pointer; /* still show it’s clickable */
   color: inherit;
   width: 100%;
   font-size: 1.4rem;
@@ -33,7 +33,6 @@ dialog form button {
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
 }
-
 
 @media (max-width: 600px) {
   dialog {

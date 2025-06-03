@@ -1,106 +1,101 @@
 /* --------------------------------------------------
 ----------------- Banner  --------------------------- 
---------------------------------------------------- */ 
+--------------------------------------------------- */
 .banner {
-    background-color: var(--banner-color);
-    margin-inline: 1%;
+  background-color: var(--banner-color);
+  margin-inline: 1%;
 }
 
 .banner div {
-    padding: 0% 10% 5%; /* top, left/right, bottom */
+  padding: 0% 10% 5%; /* top, left/right, bottom */
 }
 /* styling for banner headers */
 .banner h2 {
-    font-size: 2.2rem;
-    color: #F4F3F2;
-    margin-bottom: 0.5rem;
-    font-weight: normal;
+  font-size: 2.2rem;
+  color: #f4f3f2;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
 }
 
 /* styling for banner content */
 .banner p {
-    color: #D0CAC4;
-    font-size: 1.6rem;
+  color: #d0cac4;
+  font-size: 1.6rem;
 }
 
 .banner button {
-    background-color: var(--background-color);
-    color: #171717;
-    font-size: 1.6rem;
-    border-width: 0.1rem;
-    padding: 2% 5%;
+  background-color: var(--background-color);
+  color: #171717;
+  font-size: 1.6rem;
+  border-width: 0.1rem;
+  padding: 2% 5%;
 }
 
 /* Mobile specific styles for the banner */
 @media (max-width: 768px) {
-    .banner div {
-        /* Adjust padding for smaller screens: top/bottom 4%, left/right 6% */
-        /* This reduces horizontal padding and adjusts vertical padding */
-        padding: 4% 6%; 
-    }
+  .banner div {
+    /* Adjust padding for smaller screens: top/bottom 4%, left/right 6% */
+    /* This reduces horizontal padding and adjusts vertical padding */
+    padding: 4% 6%;
+  }
 
-    .banner h2 {
-        font-size: 1.8rem; /* Reduced font size from 2.2rem */
-    }
+  .banner h2 {
+    font-size: 1.8rem; /* Reduced font size from 2.2rem */
+  }
 
-    .banner p {
-        font-size: 1.2rem; /* Reduced font size from 1.6rem */
-    }
+  .banner p {
+    font-size: 1.2rem; /* Reduced font size from 1.6rem */
+  }
 
-    .banner button {
-        font-size: 1.2rem; /* Reduced font size from 1.6rem */
-        padding: 4% 6%;   /* Adjusted button padding for smaller size */
-    }
+  .banner button {
+    font-size: 1.2rem; /* Reduced font size from 1.6rem */
+    padding: 4% 6%; /* Adjusted button padding for smaller size */
+  }
 }
-
-
 
 /* --------------------------------------------------
 ----------------- category grid -------------------- 
---------------------------------------------------- */ 
+--------------------------------------------------- */
 .category-grid {
-    display: grid;
-    /* minmax specifies the min and max sizes that the column can be when resizing the page */
-    /* 3 equal columns that share the available space */
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    
-    /* fixed row‐height is fine, or use auto */
-    grid-auto-rows: 160px;
+  display: grid;
+  /* minmax specifies the min and max sizes that the column can be when resizing the page */
+  /* 3 equal columns that share the available space */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
+  /* fixed row‐height is fine, or use auto */
+  grid-auto-rows: 160px;
 
-    gap: 16px; /* space between cards */ 
-    justify-content: center; /* center the grid in its container */
-
-    
+  gap: 16px; /* space between cards */
+  justify-content: center; /* center the grid in its container */
 }
 
 .category-grid .card {
-    display: flex;
-    flex-direction: column;
-    /*  centers the different elements with the flex direction (vertically) inside the flexbox */
-    justify-content: center; 
-    /* the elements will be placed in the horizontal center of the flexbox */
-    align-items: center;
-    background-color: var(--category--grid-button-color);
-    cursor: pointer;
-    transition: transform 0.2s;
-    border: none; /* override default black border */
+  display: flex;
+  flex-direction: column;
+  /*  centers the different elements with the flex direction (vertically) inside the flexbox */
+  justify-content: center;
+  /* the elements will be placed in the horizontal center of the flexbox */
+  align-items: center;
+  background-color: var(--category--grid-button-color);
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: none; /* override default black border */
 }
 
 .card:hover,
 .card:focus {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
 /* icon */
 .card img {
-    height: 50px;
-    margin-bottom: 0.5rem;
+  height: 50px;
+  margin-bottom: 0.5rem;
 }
 
 /* label */
 .card span {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 
 /* moving just the guitar image a bit to the right
@@ -110,38 +105,37 @@
 }
 
 @media (max-width: 768px) {
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-        grid-auto-rows: auto; /* Row height determined by card content and aspect-ratio */
-        /* gap: 16px; is inherited from the base .category-grid style */
-    }
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    grid-auto-rows: auto; /* Row height determined by card content and aspect-ratio */
+    /* gap: 16px; is inherited from the base .category-grid style */
+  }
 
-    .category-grid .card {
-        aspect-ratio: 5 / 3; /* Cards will be wider than tall*/
-        /* Inherits display:flex and alignment properties for its content */
-    }
+  .category-grid .card {
+    aspect-ratio: 5 / 3; /* Cards will be wider than tall*/
+    /* Inherits display:flex and alignment properties for its content */
+  }
 
-    /* Decrease image size on smaller screens */
-    .category-grid .card img {
-        height: 35px; /* Adjusted from original 50px */
-        margin-bottom: 0.3rem; /* Adjusted for smaller image */
-    }
+  /* Decrease image size on smaller screens */
+  .category-grid .card img {
+    height: 35px; /* Adjusted from original 50px */
+    margin-bottom: 0.3rem; /* Adjusted for smaller image */
+  }
 
-    /* Decrease text size on smaller screens */
-    .category-grid .card span {
-        font-size: 1.4rem; /* Adjusted from original 1.8rem */
-    }
+  /* Decrease text size on smaller screens */
+  .category-grid .card span {
+    font-size: 1.4rem; /* Adjusted from original 1.8rem */
+  }
 
-    /* Hide the last two cards on mobile */
-    .category-grid .card.mobile-hidden {
-        display: none;
-    }
+  /* Hide the last two cards on mobile */
+  .category-grid .card.mobile-hidden {
+    display: none;
+  }
 }
-
 
 /* --------------------------------------------------
 ----------------- About us      -------------------- 
---------------------------------------------------- */ 
+--------------------------------------------------- */
 
 .about-us {
   padding: 2rem 1rem; /* top-bottom 2, left right 1 */
@@ -151,7 +145,7 @@
 .about-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;                       /* space between left & right sections */
+  gap: 2rem; /* space between left & right sections */
   align-items: flex-start;
   align-items: center;
 }
@@ -161,9 +155,9 @@
    --------------------------------------------- */
 .mission-wrapper {
   display: flex;
-  flex: 0 1 40%;                   /* base width ~40%, but can shrink/grow */
-  min-width: 20rem;                /* never collapse below ~320px */
-  gap: 1rem;                       /* gap between icon and text ~16px */
+  flex: 0 1 40%; /* base width ~40%, but can shrink/grow */
+  min-width: 20rem; /* never collapse below ~320px */
+  gap: 1rem; /* gap between icon and text ~16px */
   align-items: flex-start;
 }
 
@@ -179,14 +173,14 @@
 
 /* Title and paragraph typography */
 .mission-title {
-  font-size: 3rem;        
+  font-size: 3rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;         
+  margin-bottom: 0.5rem;
 }
 
 .mission-description {
-  font-size: 1.6rem;       
-  line-height: 1.4;            
+  font-size: 1.6rem;
+  line-height: 1.4;
   color: #444;
 }
 
@@ -194,15 +188,15 @@
    4. RIGHT SIDE: MAP IMAGE
    --------------------------------------------- */
 .map-wrapper {
-  flex: 1 1 0;                   /* base width ~50%, but can shrink/grow */
-  min-width: 10rem;   
+  flex: 1 1 0; /* base width ~50%, but can shrink/grow */
+  min-width: 10rem;
 }
 
 .map-image {
   display: block;
-  width: 100%;                     /* fill the container’s width */
-  height: auto;                    /* keep aspect ratio */
-  border-radius: 0.5rem;           /* ~8px rounding on corners */
+  width: 100%; /* fill the container’s width */
+  height: auto; /* keep aspect ratio */
+  border-radius: 0.5rem; /* ~8px rounding on corners */
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
@@ -211,11 +205,11 @@
    --------------------------------------------- */
 @media (max-width: 768px) {
   .about-container {
-    flex-direction: column;       /* stack mission above map */
+    flex-direction: column; /* stack mission above map */
   }
   .mission-wrapper,
   .map-wrapper {
-    flex: 1 1 100%;               /* each takes full width */
+    flex: 1 1 100%; /* each takes full width */
     min-width: auto;
   }
   .mission-title {

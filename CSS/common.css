@@ -1,9 +1,7 @@
 /* import the roboto and poppins fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@0,100..900;1,100..900&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@0,100..900;1,100..900&display=swap");
 
 /* :root selects the root element of the document:
    <html> in the case of HTML */
@@ -14,66 +12,70 @@ most elements in the html will inherit that feature
 same applies to font style, size and other things... */
 
 :root {
-    /* colours */
-    --category--grid-button-color: #fcd772;
-    --background-color: #FAF3E0;
-    --warm-ish-background-color: #EFDB99;
-    --warm-background-color: #DECA87;
-    --footer-color: #302606;
-    --footer-secondary-text-color: #D1D5DB;
-    --banner-color: #7D661C;
-    --action-button-color: black;
-    --main-text-color: black;
-    --secondary-text-color:#525252;
+  /* colours */
+  --category--grid-button-color: #fcd772;
+  --background-color: #faf3e0;
+  --warm-ish-background-color: #efdb99;
+  --warm-background-color: #deca87;
+  --footer-color: #302606;
+  --footer-secondary-text-color: #d1d5db;
+  --banner-color: #7d661c;
+  --action-button-color: black;
+  --main-text-color: black;
+  --secondary-text-color: #525252;
 
-    /* font */
-    /*  default font size is 16px, and i'll try to all other fonts in relation to it */
-    font-size: 13px;
+  /* font */
+  /*  default font size is 16px, and i'll try to all other fonts in relation to it */
+  font-size: 13px;
 
-    /* if font property not specified then defaults to normal/medium */
-    /* if the user machine can't use roboto, then defaults to sans serif */
-    font-family: "Roboto", sans-serif; 
-    --all-caps-font: "Poppins", sans-serif;
-    /* font weights */
-    --normal: 400;
-    --medium: 500;
-    --semi-bold: 600;
+  /* if font property not specified then defaults to normal/medium */
+  /* if the user machine can't use roboto, then defaults to sans serif */
+  font-family: "Roboto", sans-serif;
+  --all-caps-font: "Poppins", sans-serif;
+  /* font weights */
+  --normal: 400;
+  --medium: 500;
+  --semi-bold: 600;
 
+  /* borders */
+  --not-rounded: 0px; /* to be used with corner radius */
 
-    /* borders */
-    --not-rounded: 0px; /* to be used with corner radius */
-
-    /* phone/tablet resolution switch */
-    --resolution: 768px;
+  /* phone/tablet resolution switch */
+  --resolution: 768px;
 }
 
 /* A common threshold for screen width is around 768px, which typically separates phones from tablets/desktops. */
 
-
-
-
 /* body is our main frame (the auto layout if you will) */
 body {
-    background-color: var(--background-color);
-    display: flex;
-    flex-direction: column;
-    /* align-items: flex-start; */
-    gap: 20px; /* vertical gap between children */
-    padding-inline: 10%; /* left and right padding 10% */
-    
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  gap: 20px; /* vertical gap between children */
+  padding-inline: 10%; /* left and right padding 10% */
+}
+
+/* makes sure footer is at the bottom of the page when page is partially empty */
+html,
+body {
+  height: 100%;
+}
+
+main {
+  flex: 1;
 }
 
 @media (max-width: 768px) {
   body {
-    padding-inline:2%; /* reduce padding on mobile */
+    padding-inline: 2%; /* reduce padding on mobile */
   }
 }
-
 
 /* ---------- Overriding defaults -------------- */
 /* unordered list */
 ul {
-    padding-inline-start: 0; /* removes default left padding */
+  padding-inline-start: 0; /* removes default left padding */
 }
 
 /* hrefs (links) */
@@ -93,19 +95,12 @@ img {
   border-radius: 0;
 }
 
-
-
-
-
-
-
-
 /* --------------------------------------------------
 ----------------- header styling -------------------- 
 --------------------------------------------------- */
 header {
   /*  top padding */
-  padding-top: 2rem; 
+  padding-top: 2rem;
 }
 
 header .row {
@@ -121,24 +116,24 @@ header .title {
 }
 
 .search-form {
-  position: relative;               /* Containing block for the button */
-  width: 38%;                      /* make the bar 70% wide */
-  flex: 0 0 auto;                  /* prevent it from growing or shrinking */
-  margin-left: auto; 
+  position: relative; /* Containing block for the button */
+  width: 38%; /* make the bar 70% wide */
+  flex: 0 0 auto; /* prevent it from growing or shrinking */
+  margin-left: auto;
   max-width: 400px;
-  margin-right: 1rem;              /* optional spacing between search & cart */
-  position: relative;              /* keep your button-inside positioning */
+  margin-right: 1rem; /* optional spacing between search & cart */
+  position: relative; /* keep your button-inside positioning */
 }
 .search-form input[type="search"] {
   width: 100%;
   padding: 0.5rem 2.5rem 0.5rem 1rem;
   border: 1px solid #ccc;
-  border-radius: 9999px;            /* Fully rounded (pill) */
+  border-radius: 9999px; /* Fully rounded (pill) */
   font-size: 1.2rem;
   background-color: #fff;
 }
 .search-form button {
-  position: absolute;               /* Place icon inside input */ 
+  position: absolute; /* Place icon inside input */
   top: 50%;
   right: 0.75rem;
   transform: translateY(-50%);
@@ -154,14 +149,14 @@ header .title {
 
 /* 5. Cart icon + badge */
 .cart {
-  position: relative;               /* Containing block for badge */      /* :contentReference[oaicite:3]{index=3} */
+  position: relative; /* Containing block for badge */ /* :contentReference[oaicite:3]{index=3} */
 }
 .cart img {
   width: 2rem;
   height: 2rem;
 }
 .cart .badge {
-  position: absolute;               /* Position over top-right of cart */ /* :contentReference[oaicite:4]{index=4} */
+  position: absolute; /* Position over top-right of cart */ /* :contentReference[oaicite:4]{index=4} */
   top: -0.25rem;
   right: -0.25rem;
   width: 1.25rem;
@@ -178,7 +173,7 @@ header .title {
 nav ul {
   display: flex;
   flex-wrap: wrap;
-  list-style: none;   /*  remove dots */
+  list-style: none; /*  remove dots */
   background-color: var(--warm-background-color);
   border-radius: 10px;
   overflow: hidden;
@@ -186,7 +181,7 @@ nav ul {
 
 nav li {
   /* top and bottom then sides */
-  padding: 0.75rem 2rem; 
+  padding: 0.75rem 2rem;
   font-size: 1.3rem;
 }
 
@@ -209,14 +204,13 @@ nav a {
   }
 
   .divider.mobile-show {
-  display: block;
-  } 
+    display: block;
+  }
 }
-
 
 /* --------------------------------------------------
 ----------------- Carousel ------------------------ 
---------------------------------------------------- */ 
+--------------------------------------------------- */
 .carousel-container h2 {
   font-size: 2.5rem;
   font-weight: var(--normal);
@@ -226,26 +220,28 @@ nav a {
 .carousel {
   display: flex;
   flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
-  
+
   gap: 16px;
   padding-inline: 2%;
 }
 
 .carousel .card {
-  display: flex;             
+  display: flex;
   flex-direction: column;
   cursor: pointer;
   transition: transform 0.2s;
-  border: 1px solid #E5E7EB;
+  border: 1px solid #e5e7eb;
   box-sizing: border-box; /* Ensures padding and border are included in the item's total width/height */
-  
+
   /* Flex properties:
      - flex-shrink: 0 prevents items from shrinking below their basis, forcing scroll.
      - flex-grow: 0 prevents items from growing if there's extra space (e.g. fewer than 4 items).
   */
-  flex-shrink: 0; 
-  flex-grow: 0;   
-  flex-basis: calc(25% - 12px); /* Each item aims for 1/4 of container width, accounting for 3 gaps */
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: calc(
+    25% - 12px
+  ); /* Each item aims for 1/4 of container width, accounting for 3 gaps */
 }
 
 .carousel .card:hover,
@@ -257,7 +253,6 @@ nav a {
   width: 100%;
   height: auto;
   margin-bottom: 0.5rem;
-
 }
 
 .carousel .card span,
@@ -271,13 +266,12 @@ nav a {
   padding-top: 10%;
 }
 
-
 @media (max-width: 769px) {
   .carousel-container h2 {
     font-size: 1.8rem; /* Smaller font size for h2 on mobile */
   }
   .carousel {
-    overflow-x: auto;  /* Enable horizontal scrolling */
+    overflow-x: auto; /* Enable horizontal scrolling */
   }
   .carousel .card {
     flex-basis: 200px; /* Set a fixed base width for cards on mobile */
@@ -285,19 +279,16 @@ nav a {
   }
 }
 
-
-
-
 /* --------------------------------------------------
 ----------------- Footer styling -------------------- 
---------------------------------------------------- */ 
+--------------------------------------------------- */
 
 /* note this matches the footer HTML tag, not a class or ID named "footer" */
 footer {
   background-color: var(--footer-color);
   padding: 26px 13px; /* top and bottom are 26px, left and right are 13px */
-  border-radius:var(--not-rounded);
-  margin-inline: -5%; /* Makes footer wider than main content area (body padding 10% -> content 80%, footer 80% + 2*5% = 90%) */
+  border-radius: var(--not-rounded);
+  margin-inline: -5%; /* Makes footer wider than main content area */
 }
 
 .footer-grid {
@@ -320,7 +311,7 @@ footer {
   color: var(--footer-secondary-text-color);
   list-style: none;
 }
-.footer-column p, 
+.footer-column p,
 .footer-column ul li,
 .footer-bottom {
   font-size: 1.1em;
@@ -337,7 +328,7 @@ footer {
 
 .footer-bottom {
   text-align: center;
-  color: #9CA3AF;
+  color: #9ca3af;
   margin-top: 1.5rem; /* Added some top margin for spacing */
 }
 
@@ -354,30 +345,30 @@ footer button {
 /* Mobile design for footer */
 @media (max-width: 768px) {
   footer {
-  background-image: url('../images/mobile_footer.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent; /* Hide original background color */
-  
-  /* Make footer full screen width by counteracting body's mobile padding (2%) */
-  margin-inline: -2%;
-  padding: 0; /* Remove original padding */
-  height: 150px; /* Adjust height as needed for your image aspect ratio */
+    background-image: url("../images/mobile_footer.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent; /* Hide original background color */
+
+    /* Make footer full screen width by counteracting body's mobile padding (2%) */
+    margin-inline: -2%;
+    padding: 0; /* Remove original padding */
+    height: 150px; /* Adjust height as needed for your image aspect ratio */
   }
 
   /* Hide original footer content on mobile */
   footer .footer-grid,
   footer .footer-bottom,
-  footer button { /* Also hide any buttons that were part of the original footer content */
-  display: none;
+  footer button {
+    /* Also hide any buttons that were part of the original footer content */
+    display: none;
   }
 }
 
-
 /* --------------------------------------------------
 ----------------- Action button -------------------- 
---------------------------------------------------- */ 
+--------------------------------------------------- */
 .action-button {
   display: block;
   width: 100%;
@@ -398,19 +389,17 @@ footer button {
   }
 }
 
-
 /* --------------------------------------------------
 ----------------- Checkout pages titles ------------- 
---------------------------------------------------- */ 
+--------------------------------------------------- */
 .checkout h1 {
-    font-family: var(--all-caps-font);
-    font-weight: var(--semi-bold);
+  font-family: var(--all-caps-font);
+  font-weight: var(--semi-bold);
 }
-
 
 .divider {
   width: 100%;
   height: 1px;
   border: none;
-  background-color: #E5E7EB;
+  background-color: #e5e7eb;
 }
