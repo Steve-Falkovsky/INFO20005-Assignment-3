@@ -81,6 +81,24 @@ document.addEventListener('DOMContentLoaded', () => {
       description: "The Gretsch GT567 Electromatic offers classic Gretsch hollow body tones and style at an accessible price.",
       specifications: { "Body": "Laminated Maple", "Neck": "Maple", "Fingerboard": "Rosewood", "Pickups": "Black Top Filter'Tron" },
       features: "Bigsby B60 vibrato tailpiece."
+    },
+    "fenderPrincetonAmp": {
+      name: "Fender Princeton Amp",
+      image: "images/amp.png",
+      price: "$449",
+      tags: ["Used", "Vintage"],
+      description: "Classic Fender Princeton reverb amplifier, known for its lush reverb and tremolo.",
+      specifications: { "Type": "Tube", "Wattage": "12 Watts", "Speaker": "10-inch Jensen", "Effects": "Reverb, Tremolo" },
+      features: "Compact and versatile."
+    },
+    "korgMinilogue": {
+      name: "Korg Minilogue",
+      image: "images/korg.png",
+      price: "$799",
+      tags: ["New", "Analog Synth"],
+      description: "A powerful and versatile analog synthesizer with a fully programmable interface.",
+      specifications: { "Polyphony": "4-voice", "Oscillators": "2 VCOs per voice", "Filter": "Analog Low-pass", "Sequencer": "16-step" },
+      features: "Built-in oscilloscope display."
     }
     // Add all other products here...
   };
