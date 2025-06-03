@@ -41,30 +41,26 @@
             </div>
           </dialog>
 
-          <details class="accordion">
+          <details class="accordion" id="descriptionAccordion">
             <summary>Description</summary>
             <div class="accordion-content">
               <p>
-                Vintage 1982 Fender Stratocaster in excellent playing condition.
-                Some wear consistent with age. Original pickups.
+                {/* This content will be dynamically replaced */}
               </p>
             </div>
           </details>
-          <details class="accordion">
+          <details class="accordion" id="specificationsAccordion">
             <summary>Specifications</summary>
             <div class="accordion-content">
               <ul>
-                <li>Body: Alder</li>
-                <li>Neck: Maple</li>
-                <li>Fingerboard: Rosewood</li>
-                <li>Pickups: Original Single Coils</li>
+                {/* This content will be dynamically replaced */}
               </ul>
             </div>
           </details>
-          <details class="accordion">
+          <details class="accordion" id="featuresAccordion">
             <summary>Features</summary>
             <div class="accordion-content">
-              <p>Comes with a hardshell case.</p>
+              <p>{/* This content will be dynamically replaced */}</p>
             </div>
           </details>
         </div>
@@ -73,17 +69,17 @@
       <div class="carousel-container">
         <h2>Similar items</h2>
         <div class="carousel">
-          <a href="#" class="card">
+          <a href="product_page.html?product=fenderSquire" class="card">
             <img src="images/squire.png" alt="Product 1" />
             <span>Fender Squire</span>
             <p>$1,499</p>
           </a>
-          <a href="#" class="card">
+          <a href="product_page.html?product=fenderSrv" class="card">
             <img src="images/srv.png" alt="Product 2" />
             <span>Fender SRV</span>
             <p>$1,799</p>
           </a>
-          <a href="#" class="card">
+          <a href="product_page.html?product=gretschGt567" class="card">
             <img src="images/gretsch.png" alt="Product 3" />
             <span>Gretsch GT567</span>
             <p>$1,599</p>
@@ -99,6 +95,9 @@
 
     <!-- popup functionality -->
     <script src="js/popup.js" defer></script>
+
+    <!-- script to load product details dynamically -->
+    <script src="js/product_loader.js" defer></script>
 
     <!-- add to cart button functionality -->
     <script src="js/product.js" type="module" defer></script>
