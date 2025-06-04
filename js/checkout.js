@@ -14,7 +14,36 @@ function updateCheckoutSummary(items) {
     }, 0);
   }
 
-  const shippingCost = items.length > 0 ? 25.0 : 0.0; // $25 shipping if items exist, else $0
+  let shippingCost = 0;
+  const selectedDeliveryOption = document.querySelector(
+    'input[name="deliveryOption"]:checked'
+  );
+
+  if (items.length > 0 && selectedDeliveryOption) {
+    switch (selectedDeliveryOption.value) {
+      case "standard":
+        shippingCost = 4.99;
+        break;
+      case "express":
+        shippingCost = 12.99;
+        break;
+      case "pickup":
+        shippingCost = 0.0;
+        break;
+      default:
+        shippingCost = 4.99; // Default to standard if something is odd
+    }
+  } else if (items.length > 0) {
+    // If no option is selected yet but there are items, default to standard or $0
+    // Forcing a selection is better, but as a fallback:
+    const defaultOption = document.getElementById("deliveryStd");
+    if (defaultOption && defaultOption.checked) {
+      shippingCost = 4.99;
+    } else {
+      shippingCost = 0.0; // Or another default if no radio is initially checked
+    }
+  }
+
   const total = subtotal + shippingCost;
 
   if (subtotalElement) {
@@ -40,20 +69,25 @@ function displayCheckoutItems(items) {
   if (desktopContainer) desktopContainer.innerHTML = ""; // Clear placeholders
   if (mobileContainer) mobileContainer.innerHTML = ""; // Clear placeholders
 
+  const placeOrderButton = document.getElementById("placeOrderBtn");
+
   if (items.length === 0) {
     const emptyMessage = "<p>Your cart is empty. Add items to proceed.</p>";
     if (desktopContainer) desktopContainer.innerHTML = emptyMessage;
     if (mobileContainer) mobileContainer.innerHTML = emptyMessage;
-    // Optionally disable the "Place Order" button or redirect
-    const placeOrderButton = document.querySelector(
-      ".right-container .action-button"
-    );
+
     if (placeOrderButton) {
       placeOrderButton.disabled = true;
       placeOrderButton.style.opacity = "0.5";
       placeOrderButton.style.cursor = "not-allowed";
     }
     return;
+  }
+
+  if (placeOrderButton) {
+    placeOrderButton.disabled = false;
+    placeOrderButton.style.opacity = "1";
+    placeOrderButton.style.cursor = "pointer";
   }
 
   items.forEach((item) => {
@@ -80,30 +114,56 @@ document.addEventListener("DOMContentLoaded", () => {
   refreshCartIcon(); // Update cart icon in header
 
   const items = getCartItems();
-  displayCheckoutItems(items);
-  updateCheckoutSummary(items);
+  displayCheckoutItems(items); // Display items first
+  updateCheckoutSummary(items); // Then update summary based on items and default delivery
 
-  // Open the "Item Summary" accordion by default if there are items
-  // and it's likely a mobile view (though this is a simple check)
-  if (items.length > 0) {
-    const allItemsAccordion = document.querySelector(
-      "details.accordion.all-items"
-    );
-    if (allItemsAccordion && window.innerWidth < 768) {
-      // 768px is a common breakpoint for mobile/tablet
-      // allItemsAccordion.open = true; // This might be too aggressive, depends on UX preference
-    }
-  }
+  // Add event listeners to delivery option radio buttons
+  const deliveryOptions = document.querySelectorAll(
+    'input[name="deliveryOption"]'
+  );
+  deliveryOptions.forEach((option) => {
+    option.addEventListener("change", () => {
+      updateCheckoutSummary(getCartItems()); // Recalculate summary when delivery option changes
+    });
+  });
 
-  // --- Add event listener for the Place Order button ---
-  const placeOrderButton = document.getElementById("placeOrderBtn");
-  if (placeOrderButton) {
-    placeOrderButton.addEventListener("click", () => {
-      // Clear the cart items from localStorage
+  // Add event listener for the Place Order button
+  const placeOrderBtn = document.getElementById("placeOrderBtn");
+  if (placeOrderBtn) {
+    placeOrderBtn.addEventListener("click", () => {
+      if (items.length === 0) {
+        // Double check cart isn't empty before proceeding
+        alert("Your cart is empty. Please add items before placing an order.");
+        return;
+      }
+      // Get selected delivery option
+      const selectedOption = document.querySelector(
+        'input[name="deliveryOption"]:checked'
+      );
+      let deliveryInfoText = "Delivery/Pickup option not selected.";
+
+      if (selectedOption) {
+        const label = document.querySelector(
+          `label[for="${selectedOption.id}"]`
+        );
+        if (label) {
+          deliveryInfoText = label.textContent.trim();
+        }
+      } else {
+        // If no option is selected, you might want to alert the user or prevent proceeding
+        alert("Please select a delivery or pickup option.");
+        return;
+      }
+
+      // Store the selected delivery option text for the confirmation page
+      localStorage.setItem("selectedDeliveryOptionText", deliveryInfoText);
+
+      // Clear the cart
       saveCartItems([]); // Save an empty array to clear the cart
+      refreshCartIcon(); // Update the cart icon in the header
 
-      // Refresh the cart icon in the header to show 0
-      refreshCartIcon();
+      // Navigate to the purchase confirmation page
+      window.location.href = "purchase_confirmation.html";
     });
   }
 });
