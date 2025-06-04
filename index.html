@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="CSS/common.css" />
     <link rel="stylesheet" href="CSS/home.css" />
+    <link rel="stylesheet" href="CSS/popup.css" />
     <title>Music Swop Shop</title>
   </head>
 
@@ -46,7 +47,7 @@
       </a>
     </div>
 
-<div class="carousel-container">
+    <div class="carousel-container">
       <h2>Featured Products</h2>
       <div class="carousel">
         <a href="product_page.html?product=fenderPrincetonAmp" class="card">
@@ -101,9 +102,36 @@
       </div>
     </section>
 
+    <!-- Popup HTML Structure -->
+    <div id="welcomePopup" class="popup-overlay" style="display: none">
+      <div class="popup-content">
+        <h3>Welcome to Our Demo Site!</h3>
+        <p>
+          This is a demonstration website. As creating all product listings from
+          scratch isn't feasible for this project, please note:
+        </p>
+        <ul>
+          <li>
+            Only the <strong>'Guitars'</strong> category in the category grid is
+            clickable.
+          </li>
+          <li>
+            All <strong>featured products</strong> displayed on this homepage
+            can be accessed directly.
+          </li>
+        </ul>
+        <p>
+          Other category links or product listings may not be functional. Thank
+          you for your understanding!
+        </p>
+        <button id="closePopupButton">Got it!</button>
+      </div>
+    </div>
+
     <div data-include="components/footer.html"></div>
 
     <!-- loads components like header and footer by looking for a div match-->
     <script src="js/includes.js" type="module" defer></script>
+    <script src="js/popup.js" defer></script>
   </body>
 </html>
