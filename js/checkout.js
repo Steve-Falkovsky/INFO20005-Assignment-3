@@ -1,4 +1,4 @@
-import { getCartItems, refreshCartIcon } from "./utils.js";
+import { getCartItems, saveCartItems, refreshCartIcon } from "./utils.js";
 
 // Function to calculate and update order summary on the checkout page
 function updateCheckoutSummary(items) {
@@ -30,22 +30,28 @@ function updateCheckoutSummary(items) {
 
 // Function to display cart items on the checkout page
 function displayCheckoutItems(items) {
-  const desktopContainer = document.getElementById("checkout-items-desktop-container");
-  const mobileContainer = document.getElementById("checkout-items-mobile-container");
+  const desktopContainer = document.getElementById(
+    "checkout-items-desktop-container"
+  );
+  const mobileContainer = document.getElementById(
+    "checkout-items-mobile-container"
+  );
 
   if (desktopContainer) desktopContainer.innerHTML = ""; // Clear placeholders
-  if (mobileContainer) mobileContainer.innerHTML = "";   // Clear placeholders
+  if (mobileContainer) mobileContainer.innerHTML = ""; // Clear placeholders
 
   if (items.length === 0) {
     const emptyMessage = "<p>Your cart is empty. Add items to proceed.</p>";
     if (desktopContainer) desktopContainer.innerHTML = emptyMessage;
     if (mobileContainer) mobileContainer.innerHTML = emptyMessage;
     // Optionally disable the "Place Order" button or redirect
-    const placeOrderButton = document.querySelector('.right-container .action-button');
+    const placeOrderButton = document.querySelector(
+      ".right-container .action-button"
+    );
     if (placeOrderButton) {
-        placeOrderButton.disabled = true;
-        placeOrderButton.style.opacity = "0.5";
-        placeOrderButton.style.cursor = "not-allowed";
+      placeOrderButton.disabled = true;
+      placeOrderButton.style.opacity = "0.5";
+      placeOrderButton.style.cursor = "not-allowed";
     }
     return;
   }
@@ -63,8 +69,10 @@ function displayCheckoutItems(items) {
         </div>
       </div>
     `;
-    if (desktopContainer) desktopContainer.insertAdjacentHTML("beforeend", itemHTML);
-    if (mobileContainer) mobileContainer.insertAdjacentHTML("beforeend", itemHTML);
+    if (desktopContainer)
+      desktopContainer.insertAdjacentHTML("beforeend", itemHTML);
+    if (mobileContainer)
+      mobileContainer.insertAdjacentHTML("beforeend", itemHTML);
   });
 }
 
@@ -78,9 +86,24 @@ document.addEventListener("DOMContentLoaded", () => {
   // Open the "Item Summary" accordion by default if there are items
   // and it's likely a mobile view (though this is a simple check)
   if (items.length > 0) {
-    const allItemsAccordion = document.querySelector('details.accordion.all-items');
-    if (allItemsAccordion && window.innerWidth < 768) { // 768px is a common breakpoint for mobile/tablet
-        // allItemsAccordion.open = true; // This might be too aggressive, depends on UX preference
+    const allItemsAccordion = document.querySelector(
+      "details.accordion.all-items"
+    );
+    if (allItemsAccordion && window.innerWidth < 768) {
+      // 768px is a common breakpoint for mobile/tablet
+      // allItemsAccordion.open = true; // This might be too aggressive, depends on UX preference
     }
+  }
+
+  // --- Add event listener for the Place Order button ---
+  const placeOrderButton = document.getElementById("placeOrderBtn");
+  if (placeOrderButton) {
+    placeOrderButton.addEventListener("click", () => {
+      // Clear the cart items from localStorage
+      saveCartItems([]); // Save an empty array to clear the cart
+
+      // Refresh the cart icon in the header to show 0
+      refreshCartIcon();
+    });
   }
 });
