@@ -106,6 +106,15 @@ h2 {
   font-size: 1rem;
 }
 
+.empty-cart {
+  width: 100%;
+  text-align: center;
+}
+
+.empty-cart .action-button {
+  width: 50%;
+}
+
 @media (max-width: 768px) {
   h2 {
     left: unset;
@@ -126,5 +135,13 @@ h2 {
   }
   .item-price {
     font-size: 1rem;
+  }
+
+  .left-container {
+    padding-bottom: 5%;
+  }
+
+  .empty-cart {
+  padding-bottom: 5%;
   }
 }

@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
       items.forEach((item, index) => {
         const card = document.createElement("div");
         card.className = "item-card";
-        // Ensure item.price is displayed correctly, assuming it's a string like "$X,XXX.XX"
         const priceDisplay = item.price;
 
         card.innerHTML = `
